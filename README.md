@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# Project Title
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+SnowBuddy is a comprehensive web application designed to bring all essential information about Canadian ski resorts into one accessible platform. Users can explore resorts, find detailed information, and receive real-time updates on snow conditions and weather forecasts.
 
-In the project directory, you can run:
+### Problem
 
-### `npm start`
+Ski enthusiasts often struggle to find consolidated information about different ski resorts in Canada, such as trail maps, number of trails, and snow conditions, all in one place.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### User Profile
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The primary users will be ski and snowboard enthusiasts, travel planners, and holiday-goers looking for resort information and snow conditions.
 
-### `npm test`
+### Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- List of ski resorts in Canada
+- Detailed resort pages
+- Real-time snow forecast and resort conditions
 
-### `npm run build`
+## Implementation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React
+- Express
+- Node.js
+- Mysql
+- Client libraries: 
+    - react
+    - react-router
+    - axios
+- Server libraries:
+    - knex
+    - express
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### APIs
 
-### `npm run eject`
+- SnowForecast API for real-time snow conditions
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Sitemap
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Resort list page: Showcases a list of resorts
+- Resort details page: Presents detailed information about each resort and live snow conditions
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Mockups
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Resort list page: 
+![](resort-list-page.jpg)
 
-## Learn More
+- Resort details page: 
+![](resort-details-page.jpg)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Data
 
-### Code Splitting
+- Resort: Model for storing resort details including id, name, province, city, number of trails, base altitude, vertical and summit altitude, website, trail map etc.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Endpoints
 
-### Analyzing the Bundle Size
+- GET /resorts: Retrieves a list of resorts
+- GET /resorts/{id}: Provides detailed information about a specific resort
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Auth
 
-### Making a Progressive Web App
+- No authentication is needed for the first sprint. User accounts will be considered for future development sprints.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Roadmap
 
-### Advanced Configuration
+- Create client
+    - react project with routes and boilerplate pages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Create server
+    - express project with routing
 
-### Deployment
+- Frontend and backend development for resort list page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Frontend and backend development for resort details page
 
-### `npm run build` fails to minify
+- Feature: List resorts in Canada
+    - Implement resort list page
+    - Create GET /cafes endpoint
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Feature: View resort
+    - Implement resort details page
+    - Create GET /cafes/:id 
+
+- Testing and bug fixes
+
+- DEMO DAY
+
+## Nice-to-haves
+
+- Advanced filter options for finding resorts
+- User profile page
+- Registration and login pages
+- Recording/tracking feature
+- A social platform for users to rate resorts and share experiences
+    - Rating system
+    - Share location with nearby friends
+- Carpool finder
+- Marketplace for trading or selling snow gear
+
