@@ -1,0 +1,111 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+.resorts-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: $cloud 1px solid;
+    color: $black;
+    padding:24px;
+
+    @include tablet {
+      padding: 8px 32px;
+      flex-direction: row;
+    }
+
+    &__main-container{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+  
+    &__details-container,
+    &__info-container {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+      @include tablet {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    &__label-mobile {
+      @include h4-style;
+      margin:0;
+      margin-bottom:4px;
+		  color: $grey;
+      font-weight: $font-weight-semibold;
+		  
+      @include tablet {
+			  display: none;
+		  }
+    }
+
+    &__name-container {
+      @include tablet {
+        flex: 5.5;
+      }
+    }
+
+
+    &__name-sub-container {
+      display: flex;
+      flex-direction: row;
+      text-decoration: none;
+      @include h3-style;
+      margin-top:0;
+    }
+
+    &__name{
+      margin-top: 0;
+      margin-bottom:16px;
+      color: $blue;
+      font-weight: $font-weight-semibold;
+
+      @include tablet {
+        margin-bottom:0px;
+      }
+    }
+
+    &__city,
+    &__province {
+      @include h3-style;
+      margin-bottom: 16px;
+      margin-top:0;
+
+      @include tablet {
+        margin-right:1rem;
+        margin-bottom: 0;
+        flex: 1;
+
+        @include desktop {
+          width: auto; 
+        }
+      }
+    }
+
+    &__trails{
+      @include h3-style;
+      margin-bottom: 16px;
+      margin-top:0;
+
+      @include tablet {
+        margin-bottom: 0;
+      }
+    }
+
+    &__trails-container{
+      @include tablet {
+      flex: 2;
+      }
+    }
+
+    &__chevron{
+      height: 20px;
+    }
+  }
+  
