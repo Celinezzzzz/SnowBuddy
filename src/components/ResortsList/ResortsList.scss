@@ -64,6 +64,14 @@
 
 .resorts-list-section__label{
   &-img {
+
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &.active {
+        color: blue; 
+    }
+
     @include tablet {
       background: none;
       padding: 0;
