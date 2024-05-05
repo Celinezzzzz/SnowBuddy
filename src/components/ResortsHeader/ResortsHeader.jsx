@@ -1,6 +1,5 @@
 import React from 'react';
 import './ResortsHeader.scss';
-import { Link } from 'react-router-dom';
 
 function ResortsHeader() {
   return (
