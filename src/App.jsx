@@ -1,24 +1,20 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.scss';
 import Header from './components/Header/Header';
 import Footer from "./components/Footer/Footer";
 import ResortsPage from './pages/ResortsPage/ResortsPage';
+import ResortDetailsPage from './pages/ResortDetailsPage/ResortDetailsPage';
 
 function App() {
   return (
-<BrowserRouter>
-      <Header/>
+    <BrowserRouter>
+      <Header />
       <Routes>
-        {/* reroute to resort list?? */}
-        <Route path='/'></Route>
-
-        {/* Resort list */}
-        <Route path='/resorts'element={<ResortsPage />}></Route>
-
-        {/* Resort details */}
-        <Route path='/resorts/:resortId'></Route>
+        <Route path="/" element={<Navigate replace to="/resorts" />} />
+        <Route path="/resorts" element={<ResortsPage />} />
+        <Route path="/resorts/:itemId" element={<ResortDetailsPage />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </BrowserRouter>
   );
 }
