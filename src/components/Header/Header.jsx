@@ -29,15 +29,14 @@ function Header({ isUserLoggedIn, setIsUserLoggedIn }) {
                     >
                         Resorts
                     </Link>
-                    {!isUserLoggedIn ? (
-                        <Link
-                            to='/login'
-                            className={url === '/login' ? 'header__button header__button--active' : 'header__button'}
-                        >
-                            Sign In
-                        </Link>
-                    ) : (
+                    {isUserLoggedIn ? (
                         <>
+                            <Link
+                                to='/logbook'
+                                className={url === '/logbook' ? 'header__button header__button--active' : 'header__button'}
+                            >
+                                Logbook
+                            </Link>
                             <Link
                                 to='/profile'
                                 className={url === '/profile' ? 'header__button header__button--active' : 'header__button'}
@@ -48,6 +47,13 @@ function Header({ isUserLoggedIn, setIsUserLoggedIn }) {
                                 Log Out
                             </button>
                         </>
+                    ) : (
+                        <Link
+                            to='/login'
+                            className={url === '/login' ? 'header__button header__button--active' : 'header__button'}
+                        >
+                            Sign In
+                        </Link>
                     )}
                 </div>
             </div>

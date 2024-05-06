@@ -1,0 +1,64 @@
+.logbook {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    form {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-bottom: 20px;
+
+        input[type="text"],
+        input[type="date"],
+        input[type="number"],
+        input[type="time"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            grid-column: span 3;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    }
+
+    .entries {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .entry {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            color: black;
+
+            div {
+                margin-bottom: 5px;
+            }
+
+            button {
+                margin-right: 10px;
+                padding: 5px 10px;
+                background-color: red;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+        }
+    }
+}
