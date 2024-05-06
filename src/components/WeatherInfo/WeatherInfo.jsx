@@ -29,23 +29,37 @@ function WeatherInfo({ itemId }) {
             return <p>Loading weather data or data is incomplete...</p>;
         }
 
-        return weatherData.daily.time.map((date, index) => {
-            const weatherCode = weatherData.daily.weathercode[index];
-            const weatherInfo = WMOWeatherCode[weatherCode.toString()];  
-            const weatherDescription = weatherInfo ? weatherInfo.day.description : "Weather description not available";
-            const weatherImage = weatherInfo ? weatherInfo.day.image : null;
-            return (
-                <div key={index} className="weather-day">
-                    <h3>{new Date(date).toLocaleDateString()}</h3>
-                    <p><strong>Weather:</strong> {weatherDescription}</p>
-                    {weatherImage && <img src={weatherImage} alt={weatherDescription} style={{ width: '50px' }} />}
-                    <p><strong>Temperature:</strong> Max {weatherData.daily.temperature_2m_max[index]}°C, Min {weatherData.daily.temperature_2m_min[index]}°C</p>
-                    <p><strong>Precipitation:</strong> {weatherData.daily.precipitation_sum[index]} mm</p>
-                    <p><strong>Snowfall:</strong> {weatherData.daily.snowfall_sum[index]} cm</p>
-                    <p><strong>Wind Speed:</strong> Up to {weatherData.daily.windspeed_10m_max[index]} km/h</p>
+        return (
+            <div className="weather-table">
+                <div className="weather-row header">
+                    <div>Date</div>
+                    <div>Precipitation</div>
+                    <div>Snowfall</div>
+                    <div>Weather</div>
+                    <div>Temperature Max/Min</div>
+                    <div>Wind Speed</div>
                 </div>
-            );
-        });
+                {weatherData.daily.time.map((time, index) => {
+                    const weatherCode = weatherData.daily.weathercode[index];
+                    const weatherInfo = WMOWeatherCode[weatherCode.toString()];
+                    const weatherDescription = weatherInfo ? weatherInfo.day.description : "Not available";
+                    const weatherImage = weatherInfo ? weatherInfo.day.image : null;
+                    return (
+                        <div key={index} className="weather-row">
+                            <div>{new Date(time).toLocaleDateString()}</div>
+                            <div>{weatherData.daily.precipitation_sum[index]} mm</div>
+                            <div>{weatherData.daily.snowfall_sum[index]} cm</div>
+                            <div className="weather-condition">
+                                <img src={weatherImage} alt={weatherDescription} />
+                                <span>{weatherDescription}</span>
+                            </div>
+                            <div>{weatherData.daily.temperature_2m_max[index]}°C / {weatherData.daily.temperature_2m_min[index]}°C</div>
+                            <div>{weatherData.daily.windspeed_10m_max[index]} km/h</div>
+                        </div>
+                    );
+                })}
+            </div>
+        );
     };
 
     return (
