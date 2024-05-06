@@ -1,0 +1,35 @@
+.weather__wrapper {
+    font-family: Arial, sans-serif;
+
+    .weather-table {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+
+        .header {
+            font-weight: bold;
+            background-color: #f0f0f0;
+        }
+
+        .weather-row {
+            display: contents;
+
+            & > div {
+                padding: 8px;
+                border: 1px solid #ddd;
+                text-align: center;
+            }
+
+            .weather-condition {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    width: 30px;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
