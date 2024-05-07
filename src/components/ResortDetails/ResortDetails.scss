@@ -1,0 +1,57 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+.resort-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: $cloud 1px solid;
+    color: $black;
+    font-weight: bold;
+    padding:24px;
+
+    @include tablet {
+        padding: 8px 32px;
+    }
+
+    &__container1{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 24px;
+        @include tablet {
+            flex-direction: row;
+        }
+
+    }
+
+    &__container2,&__container3 {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 24px;
+    }
+
+}
+  
+.resort{
+    &-label{
+        font-weight:$font-weight-semibold;
+        color:$grey;
+    }
+
+    &-website, &-city, &-trail, &-base,&-vertical,&-summit{
+        flex:1;
+    }
+
+
+    &-map {
+        width: 100%; 
+        overflow: hidden; 
+    
+        img {
+            width: 100%; 
+            height: auto; 
+            object-fit: contain; 
+        }
+    }
+}

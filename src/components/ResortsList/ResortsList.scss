@@ -1,0 +1,84 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+
+.resorts-list{
+  padding:0;
+  margin:0;
+}
+
+.resorts-list-section{
+  display: flex;
+  flex-direction: column;
+
+  &__labels {
+    display: none;
+
+    @include tablet {
+      margin-right: 3rem;
+      display: flex;
+      flex-direction: row;
+      justify-content:space-between;
+      align-items: center;
+      background-color: rgba(#F7F8F9, 70%);
+      color: $grey;
+      font-size: 12px;
+      font-weight: $font-weight-semibold;
+      line-height: 18px;
+      padding:4px 32px;
+      height:40px;
+    }
+
+    @include desktop {
+      margin-right: 0;
+    }
+  }
+
+	&__label {
+		@include tablet {
+			&-container {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+
+				@include desktop {
+					&-resorts {
+						width: 245.3px;
+					}
+					&-city {
+						width: 205px;
+					}
+          &-province {
+						width: 205px;
+					}
+					&-trails {
+						width: 100px;
+					}					
+				}
+			}
+		}
+	}
+}
+
+.resorts-list-section__label{
+  &-img {
+
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &.active {
+        color: blue; 
+    }
+
+    @include tablet {
+      background: none;
+      padding: 0;
+      vertical-align: middle; 
+      width:16px;
+      height:16px;
+    }
+  }
+}
+
+   

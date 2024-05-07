@@ -1,0 +1,11 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+.footer {
+	margin: 2rem 0;
+	width: 100%;
+	text-align: center;
+	@include p3-style;
+
+}
