@@ -19,9 +19,14 @@ function Header({ isUserLoggedIn, setIsUserLoggedIn }) {
     return (
         <header className='header'>
             <div className='header__content'>
-                <Link to='/resorts'>
-                    <img src={SnowBuddyLogo} alt="SnowBuddy Logo" className='header__logo' />
-                </Link>
+                <div className='header__logo-contrainter'>
+                    <div>
+                        <Link to='/resorts'>
+                            <img src={SnowBuddyLogo} alt="SnowBuddy Logo" className='header__logo' />
+                        </Link>
+                    </div>
+                    <div className='header__title'>SnowBuddy</div>
+                </div>
                 <div className='header__tabs'>
                     <Link
                         to='/resorts'

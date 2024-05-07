@@ -2,7 +2,7 @@ import "./Signup.scss";
 import axios from "axios";
 import { useNavigate, Link } from 'react-router-dom';
 
-export default function Signup({ setIsUserLoggedIn }) {
+export default function Signup() {
     const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
@@ -18,7 +18,6 @@ export default function Signup({ setIsUserLoggedIn }) {
                 password,
             });
 
-            // Redirect to login page after successful signup
             navigate('/login');
         } catch (error) {
             console.error("Signup failed:", error);

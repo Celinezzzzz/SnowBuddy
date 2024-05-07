@@ -1,0 +1,13 @@
+.resort-details-header{
+    padding-left:36px;
+
+    &__nav{
+        padding:16px 0;
+
+        &-current{
+            margin:0;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+    }
+}

@@ -16,9 +16,10 @@
     display: none;
 
     @include tablet {
+      margin-right: 3rem;
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content:space-between;
       align-items: center;
       background-color: rgba(#F7F8F9, 70%);
       color: $grey;
@@ -28,9 +29,10 @@
       padding:4px 32px;
       height:40px;
     }
-		@include desktop {
-			justify-content: unset;
-		}
+
+    @include desktop {
+      margin-right: 0;
+    }
   }
 
 	&__label {
@@ -41,21 +43,18 @@
 				align-items: center;
 
 				@include desktop {
-					&-inventory {
+					&-resorts {
 						width: 245.3px;
 					}
 					&-city {
 						width: 205px;
 					}
-                    &-province {
+          &-province {
 						width: 205px;
 					}
 					&-trails {
-						width: 89px;
+						width: 100px;
 					}					
-                    &-summit {
-						width: 89px;
-					}
 				}
 			}
 		}
@@ -80,7 +79,6 @@
       height:16px;
     }
   }
-
 }
 
    

@@ -1,14 +1,22 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
 .weather__wrapper {
-    font-family: Arial, sans-serif;
+    padding:24px;
+    
 
     .weather-table {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
+        //grid-template-columns: repeat(3, 1fr); 
         gap: 10px;
+        //background-color: #CAD2E1;
+        overflow-x: auto;
+
 
         .header {
             font-weight: bold;
-            background-color: #f0f0f0;
         }
 
         .weather-row {
@@ -28,6 +36,8 @@
                 img {
                     width: 30px;
                     margin-right: 5px;
+                    background-color: #CAD2E1;
+                    border-radius: 5px;
                 }
             }
         }

@@ -1,8 +1,12 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
 .logbook {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
+    width: 100%;
 
     h1 {
         margin-bottom: 20px;
@@ -10,27 +14,46 @@
 
     form {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
         gap: 10px;
         margin-bottom: 20px;
-
+        width: 90%;
+        grid-template-columns: 1fr; 
+        
         input[type="text"],
         input[type="date"],
         input[type="number"],
-        input[type="time"] {
+        input[type="time"],
+        select {
             padding: 8px;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
 
         button {
-            grid-column: span 3;
             padding: 10px 20px;
             background-color: blue;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            width: 100%; 
+        }
+
+        @include tablet {
+            grid-template-columns: repeat(3, 1fr); 
+            width: 80%;
+            
+            button {
+                grid-column: span 3;
+            }
+        }
+
+        @include desktop {
+            width: 60%;
+            
+            button {
+                grid-column: span 3;
+            }
         }
     }
 
@@ -42,9 +65,17 @@
         .entry {
             background-color: #f9f9f9;
             padding: 15px;
-            margin-bottom: 10px;
             border-radius: 4px;
             color: black;
+            margin: 0 10px 10px 10px;
+
+            @include tablet {
+                margin-left: 5.5rem;
+            }
+
+            @include desktop {
+                margin-left: 15rem;
+            }
 
             div {
                 margin-bottom: 5px;
@@ -53,7 +84,7 @@
             button {
                 margin-right: 10px;
                 padding: 5px 10px;
-                background-color: red;
+                background-color: blue;
                 color: white;
                 border: none;
                 border-radius: 4px;
