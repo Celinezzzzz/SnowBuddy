@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Logbook = () => {
     const [entries, setEntries] = useState([]);
-    const [resorts, setResorts] = useState([]); // To store resorts data
+    const [resorts, setResorts] = useState([]); 
     const [form, setForm] = useState({ resort_id: '', date: '', number_of_runs: '', start_time: '', end_time: '' });
     const [editingId, setEditingId] = useState(null);
     const navigate = useNavigate();
@@ -86,7 +86,7 @@ const Logbook = () => {
 
     return (
         <div className="logbook">
-            <h1>Ski Diary</h1>
+            <h1>Logbook</h1>
             <form onSubmit={handleSubmit}>
                 <select name="resort_id" value={form.resort_id} onChange={handleChange}>
                     <option value="">Select Resort</option>

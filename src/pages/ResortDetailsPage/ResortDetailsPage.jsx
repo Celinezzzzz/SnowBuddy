@@ -36,7 +36,7 @@ function ResortDetailsPage () {
                         alt='Back Arrow' 
                         className='resort-details-header__nav-arrow'
                         onClick={() => navigate(-1)}/>
-                    <h1 className='resort-details-header__nav-current'>{resortDetails.item_name}</h1>
+                    <p className='resort-details-header__nav-current'>{resortDetails.resort_name}</p>
                 </div>
             </div>
             <hr />

@@ -9,7 +9,7 @@ function ResortsList({ resorts, onSortChange, activeSortField }) {
         <section className="resorts-list-section">
             <div className="resorts-list-section__labels">
                 <div className="resorts-list-section__label-container resorts-list-section__label-container-resorts">
-                    <div className="resorts-list-section__label">Name</div> 
+                    <div className="resorts-list-section__label">RESORT NAME</div> 
                     <img 
                         src={SortIcon} 
                         alt="Sort" 
@@ -17,8 +17,17 @@ function ResortsList({ resorts, onSortChange, activeSortField }) {
                         onClick={() => onSortChange('resort_name')} 
                     />
                 </div>
+                <div className="resorts-list-section__label-container resorts-list-section__label-container-trails">
+                    <div className="resorts-list-section__label">TRAIL COUNT</div>
+                    <img 
+                        src={SortIcon} 
+                        alt="Sort" 
+                        className={`resorts-list-section__label-img ${activeSortField === 'trail_count' ? 'active' : ''}`} 
+                        onClick={() => onSortChange('trail_count')}
+                    />
+                </div>
                 <div className="resorts-list-section__label-container resorts-list-section__label-container-province">
-                    <div className="resorts-list-section__label">Province</div> 
+                    <div className="resorts-list-section__label">PROVINCE</div> 
                     <img 
                         src={SortIcon} 
                         alt="Sort" 
@@ -27,21 +36,12 @@ function ResortsList({ resorts, onSortChange, activeSortField }) {
                     />
                 </div>
                 <div className="resorts-list-section__label-container resorts-list-section__label-container-city">
-                    <div className="resorts-list-section__label">City</div> 
+                    <div className="resorts-list-section__label">CITY</div> 
                     <img 
                         src={SortIcon} 
                         alt="Sort" 
                         className={`resorts-list-section__label-img ${activeSortField === 'city' ? 'active' : ''}`} 
                         onClick={() => onSortChange('city')}
-                    />
-                </div>
-                <div className="resorts-list-section__label-container resorts-list-section__label-container-trails">
-                    <div className="resorts-list-section__label"># Trails</div>
-                    <img 
-                        src={SortIcon} 
-                        alt="Sort" 
-                        className={`resorts-list-section__label-img ${activeSortField === 'trail_count' ? 'active' : ''}`} 
-                        onClick={() => onSortChange('trail_count')}
                     />
                 </div>
             </div>
