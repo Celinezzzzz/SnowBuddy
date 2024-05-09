@@ -198,6 +198,18 @@ Run React App
 npm start
 ```
 
+## Screenshots
+
+### Resorts List Page
+![Location List](./screenshots/Desktop-screenshots/ResortListPage.png)
+
+### Resort Detail Page
+![Single Location](./screenshots/Desktop-screenshots/ResortDetailsPage.png)
+
+### Logbook Page
+![Weather on Mobile](./screenshots/Desktop-screenshots/LogbookPage.png)
+
+
 
 ## Lessons Learned
 - **React and State Management:** Enhanced understanding of React and state management for building interactive UIs.
